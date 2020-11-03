@@ -50,3 +50,8 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagMan
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.xml

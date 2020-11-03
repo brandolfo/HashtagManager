@@ -111,8 +111,6 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.csprojAssemblyReference.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.AssemblyInfoInputs.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.AssemblyInfo.cs
-C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.csproj.CoreCompileInputs.cache
-C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.RazorTargetAssemblyInfo.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.csproj.CopyComplete
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\staticwebassets\HashtagManager.StaticWebAssets.Manifest.cache
@@ -120,3 +118,12 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.pdb
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.genruntimeconfig.cache
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.csproj.CoreCompileInputs.cache
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\HashtagManager.xml
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.xml

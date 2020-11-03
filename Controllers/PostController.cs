@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -25,10 +26,15 @@ namespace HashtagManager.Controllers
 		}
 
 		// GET api/<PostController>/5
-		[HttpGet("{text}")] // cambie "{id}" por "{text}"
-		public IEnumerable<Post> Get(string text)
+		/// <summary>
+		/// filtra post por palabra clave
+		/// </summary>
+		/// <param name="keyWord"></param>
+		/// <returns> devuelve una lista de post con la palabra clave</returns>
+		[HttpGet("{keyWord}")] // cambie "{id}" por "{text}"
+		public IEnumerable<Post> Get(string keyWord)
 		{
-			return _postContext.Posts.Where(x => x.TextPost.Contains(text));
+			return _postContext.Posts.Where(x => x.TextPost.Contains(keyWord));
 		}
 
 		// POST api/<PostController>
@@ -49,8 +55,9 @@ namespace HashtagManager.Controllers
 
 		// DELETE api/<PostController>/5
 		[HttpDelete("{id}")]
-		public void Delete(int id)
+		public void Delete(Guid id)
 		{
+			
 		}
 	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HashtagManager</name>
+    </assembly>
+    <members>
+        <member name="M:HashtagManager.Controllers.PostController.Get(System.String)">
+            <summary>
+            filtra post por palabra clave
+            </summary>
+            <param name="KeyWord"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
