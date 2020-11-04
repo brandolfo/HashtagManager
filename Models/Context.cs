@@ -3,10 +3,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace HashtagManager.Models
 {
-	public class PostContext : DbContext
+	public class Context : DbContext
 	{
 		private readonly IConfiguration _config;
-		public PostContext(IConfiguration config)
+		public Context(IConfiguration config)
 		{
 			_config = config;
 		}
@@ -17,5 +17,6 @@ namespace HashtagManager.Models
 		}
 
 		public DbSet<Post> Posts { get; set; }
+		public DbSet<User> Users { get; set; }
 	}
 }

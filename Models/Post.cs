@@ -7,5 +7,7 @@ namespace HashtagManager.Models
 		public DateTime DatePost { get; set; } = DateTime.Now;
 		public string TextPost { get; set; }
 		public Guid Id { get; set; }
+		public Guid UserId { get; set; }
+
 	}
 }

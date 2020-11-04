@@ -8,8 +8,8 @@
             <summary>
             filtra post por palabra clave
             </summary>
-            <param name="KeyWord"></param>
-            <returns></returns>
+            <param name="keyWord"></param>
+            <returns> devuelve una lista de post con la palabra clave</returns>
         </member>
     </members>
 </doc>

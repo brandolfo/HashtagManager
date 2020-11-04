@@ -6,6 +6,7 @@ namespace HashtagManager.Models
 	{
 		DateTime DatePost { get; set; }
 		Guid Id { get; set; }
+		Guid UserId { get; set; }
 		string TextPost { get; set; }
 	}
 }

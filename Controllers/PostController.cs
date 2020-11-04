@@ -12,17 +12,17 @@ namespace HashtagManager.Controllers
 	[ApiController]
 	public class PostController : ControllerBase
 	{
-		private readonly PostContext _postContext;
-		public PostController(PostContext postcontext) 
+		private readonly Context _context;
+		public PostController(Context context) 
 		{
-			_postContext = postcontext;
+			_context = context;
 		}
 
 		// GET: api/<PostController>
 		[HttpGet]
 		public IEnumerable<Post> Get()
 		{
-			return _postContext.Posts.OrderByDescending(x => x.DatePost);			
+			return _context.Posts.OrderByDescending(x => x.DatePost);			
 		}
 
 		// GET api/<PostController>/5
@@ -31,18 +31,18 @@ namespace HashtagManager.Controllers
 		/// </summary>
 		/// <param name="keyWord"></param>
 		/// <returns> devuelve una lista de post con la palabra clave</returns>
-		[HttpGet("{keyWord}")] // cambie "{id}" por "{text}"
+		[HttpGet("{keyWord}")] // cambie "{id}" por "{KeyWord}"
 		public IEnumerable<Post> Get(string keyWord)
 		{
-			return _postContext.Posts.Where(x => x.TextPost.Contains(keyWord));
+			return _context.Posts.Where(x => x.TextPost.Contains(keyWord));
 		}
 
 		// POST api/<PostController>
 		[HttpPost]
 		public IActionResult Post(Post post)
 		{
-			_postContext.Posts.Add(post);
-			_postContext.SaveChanges();
+			_context.Posts.Add(post);
+			_context.SaveChanges();
 
 			return new CreatedResult(post.Id.ToString(), post);
 		}
