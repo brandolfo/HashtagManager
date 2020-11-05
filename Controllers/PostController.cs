@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,7 +23,7 @@ namespace HashtagManager.Controllers
 		[HttpGet]
 		public IEnumerable<Post> Get()
 		{
-			return _context.Posts.OrderByDescending(x => x.DatePost);			
+			return _context.Posts.Include(x=> x.User).OrderByDescending(x => x.DatePost);			
 		}
 
 		// GET api/<PostController>/5

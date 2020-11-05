@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,22 +14,26 @@ namespace HashtagManager.Controllers
 	public class UserController : ControllerBase
 	{
 		private readonly Context _context;
-		public UserController(Context context)
+        private readonly IMapper _mapper;
+
+        public UserController(Context context, IMapper mapper)
 		{
 			_context = context;
-		}
+           _mapper = mapper;
+        }
 		// GET: api/<UserController>
 		[HttpGet]
 		public IEnumerable<UserDTO> Get()
 		{
-			return _context.Users;
+			return _mapper.Map<IEnumerable<UserDTO>>(_context.Users.Include(x=> x.PostList));
 		}
 
 		// GET api/<UserController>/5
 		[HttpGet("{id}")]
-		public IUserDTO Get(Guid id)
+		public IActionResult Get(Guid id)
 		{
-			return _context.Users.FirstOrDefault(x => x.Id == id);
+			var user = _context.Users.Find(id);
+			return new OkObjectResult(user);
 		}
 
 		// POST api/<UserController>

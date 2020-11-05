@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HashtagManager.Models
 {
-	public class UserDTO : IUserDTO
+	public class UserDTO
 	{
 		public Guid Id { get; set; }
 		public string Mail { get; set; }
-		public List<Post> PostList { get; set; } = new List<Post>();
+		public virtual IEnumerable<PostDto> PostList { get; set; } = new List<PostDto>();
 	}
 }
