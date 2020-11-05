@@ -55,3 +55,38 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckl
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.OpenApi.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.xml
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Properties\launchSettings.json
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\appsettings.Development.json
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\appsettings.json
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.StaticWebAssets.xml
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.exe
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.AspNetCore.Identity.UI.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.EntityFrameworkCore.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.OpenApi.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\System.Collections.Immutable.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Data.SqlClient.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.pdb
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.xml
+D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\AutoMapper.dll
