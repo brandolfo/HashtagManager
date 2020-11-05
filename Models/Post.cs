@@ -1,13 +1,12 @@
 ﻿using System;
-
 namespace HashtagManager.Models
 {
-	public class Post : IPost
+	public class Post
 	{
-		public DateTime DatePost { get; set; } = DateTime.Now;
-		public string TextPost { get; set; }
 		public Guid Id { get; set; }
-		public Guid UserId { get; set; }
-
+		public DateTime DatePost { get; set; }
+		public string TextPost { get; set; }
+		public Guid UserId { get; set; } //foreing key
+		public virtual User user { get; set; } //prop de navegacion
 	}
 }
