@@ -32,8 +32,9 @@ namespace HashtagManager.Controllers
 		[HttpGet]
 		public IEnumerable<PostDTO> Get()
 		{
-			return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts.Include(x => x.user)
-				.OrderByDescending(x => x.DatePost));			
+			return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts
+				.OrderByDescending(x => x.DatePost));
+			//return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts.Include(x => x.user).OrderByDescending(x => x.DatePost));
 		}
 
 		// GET api/<PostController>/5
@@ -57,7 +58,7 @@ namespace HashtagManager.Controllers
 		/// <param name="post"></param>
 		/// <returns>agrega un post a la lista de post del usuario </returns>
 		[HttpPost]
-		public IActionResult Post(Post post)
+		public IActionResult Post(Post post) // hay que utilizar mapping en el post?
 		{
 			_context.Posts.Add(post);
 			_context.SaveChanges();

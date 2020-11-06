@@ -63,8 +63,12 @@ namespace HashtagManager.Controllers
 
 		// DELETE api/<UserController>/5
 		[HttpDelete("{id}")]
-		public void Delete(int id)
+		public void Delete(Guid id)
 		{
+			var ToDelete = _context.Users.Find(id); // hay que agregar mapping en un delete?? consultar a corvo-san
+
+			_context.Users.Remove(ToDelete);
+			_context.SaveChanges();
 		}
 	}
 }
