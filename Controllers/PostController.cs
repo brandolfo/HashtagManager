@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using AutoMapper;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -22,12 +24,16 @@ namespace HashtagManager.Controllers
 			_mapper = mapper;
 
 		}
-
 		// GET: api/<PostController>
+		/// <summary>
+		/// Lista todos los posts existentes
+		/// </summary>
+		/// <returns>get a todos los post en la bd</returns>
 		[HttpGet]
-		public IEnumerable<Post> Get()
+		public IEnumerable<PostDTO> Get()
 		{
-			return _context.Posts.Include(x => x.user).OrderByDescending(x => x.DatePost);			
+			return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts.Include(x => x.user)
+				.OrderByDescending(x => x.DatePost));			
 		}
 
 		// GET api/<PostController>/5
@@ -37,12 +43,19 @@ namespace HashtagManager.Controllers
 		/// <param name="keyWord"></param>
 		/// <returns> devuelve una lista de post con la palabra clave</returns>
 		[HttpGet("{keyWord}")] // cambie "{id}" por "{KeyWord}"
-		public IEnumerable<Post> Get(string keyWord)
+		public IActionResult Get(string keyWord)
 		{
-			return _context.Posts.Where(x => x.TextPost.Contains(keyWord));
+			var PostsWithKeyWord = _mapper.Map<IEnumerable<PostDTO>>(
+				_context.Posts.Where(x => x.TextPost.Contains(keyWord)));
+			return new OkObjectResult(PostsWithKeyWord);
 		}
 
 		// POST api/<PostController>
+		/// <summary>
+		/// Crea un post al usuario
+		/// </summary>
+		/// <param name="post"></param>
+		/// <returns>agrega un post a la lista de post del usuario </returns>
 		[HttpPost]
 		public IActionResult Post(Post post)
 		{
@@ -59,10 +72,16 @@ namespace HashtagManager.Controllers
 		}
 
 		// DELETE api/<PostController>/5
+		/// <summary>
+		/// elimina un post por id
+		/// </summary>
+		/// <param name="id"></param>
 		[HttpDelete("{id}")]
 		public void Delete(Guid id)
 		{
-			
+			var ToDelete = _context.Posts.Find(id); // hay que agregar mapping en un delete?? consultar a corvo-san
+			_context.Posts.Remove(ToDelete);
+			_context.SaveChanges();			
 		}
 	}
 }

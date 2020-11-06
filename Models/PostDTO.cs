@@ -7,7 +7,7 @@ namespace HashtagManager.Models
 {
 	public class PostDTO
 	{
-		Guid Id { get; set; }
+		public Guid Id { get; set; }
 		public DateTime DatePost { get; set; }
 		public string TextPost { get; set; }
 		public Guid UserId { get; set; } //foreing key

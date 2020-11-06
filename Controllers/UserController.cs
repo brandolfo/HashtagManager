@@ -23,6 +23,10 @@ namespace HashtagManager.Controllers
 			_mapper = mapper;
 		}
 		// GET: api/<UserController>
+		/// <summary>
+		/// Lista todos los usuarios existentes
+		/// </summary>
+		/// <returns>Lista de todos los usuarios en la db</returns>
 		[HttpGet]
 		public IEnumerable<UserDTO> Get()
 		{
@@ -30,10 +34,15 @@ namespace HashtagManager.Controllers
 		}
 
 		// GET api/<UserController>/5
+		/// <summary>
+		/// Buscar usuario por id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns>Nos filtra un usuario por id o retorna null de no haber uno con dicho id</returns>
 		[HttpGet("{id}")]
 		public IActionResult Get(Guid id)
 		{
-			var user = _context.Users.Find(id);
+			var user = _mapper.Map<UserDTO>(_context.Users.Find(id));
 			return new OkObjectResult(user);
 		}
 

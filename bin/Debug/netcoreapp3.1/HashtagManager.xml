@@ -4,12 +4,44 @@
         <name>HashtagManager</name>
     </assembly>
     <members>
+        <member name="M:HashtagManager.Controllers.PostController.Get">
+            <summary>
+            Lista todos los posts existentes
+            </summary>
+            <returns>get a todos los post en la bd</returns>
+        </member>
         <member name="M:HashtagManager.Controllers.PostController.Get(System.String)">
             <summary>
             filtra post por palabra clave
             </summary>
             <param name="keyWord"></param>
             <returns> devuelve una lista de post con la palabra clave</returns>
+        </member>
+        <member name="M:HashtagManager.Controllers.PostController.Post(HashtagManager.Models.Post)">
+            <summary>
+            Crea un post al usuario
+            </summary>
+            <param name="post"></param>
+            <returns>agrega un post a la lista de post del usuario </returns>
+        </member>
+        <member name="M:HashtagManager.Controllers.PostController.Delete(System.Guid)">
+            <summary>
+            elimina un post por id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:HashtagManager.Controllers.UserController.Get">
+            <summary>
+            Lista todos los usuarios existentes
+            </summary>
+            <returns>Lista de todos los usuarios en la db</returns>
+        </member>
+        <member name="M:HashtagManager.Controllers.UserController.Get(System.Guid)">
+            <summary>
+            Buscar usuario por id
+            </summary>
+            <param name="id"></param>
+            <returns>Nos filtra un usuario por id o retorna null de no haber uno con dicho id</returns>
         </member>
     </members>
 </doc>
