@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,16 +15,19 @@ namespace HashtagManager.Controllers
 	public class PostController : ControllerBase
 	{
 		private readonly Context _context;
-		public PostController(Context context) 
+		private readonly IMapper _mapper;
+		public PostController(Context context, IMapper mapper) 
 		{
 			_context = context;
+			_mapper = mapper;
+
 		}
 
 		// GET: api/<PostController>
 		[HttpGet]
 		public IEnumerable<Post> Get()
 		{
-			return _context.Posts.OrderByDescending(x => x.DatePost);			
+			return _context.Posts.Include(x => x.user).OrderByDescending(x => x.DatePost);			
 		}
 
 		// GET api/<PostController>/5
