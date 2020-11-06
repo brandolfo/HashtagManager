@@ -122,8 +122,13 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\HashtagManager.xml
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.xml
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.csproj.CoreCompileInputs.cache
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\netcoreapp3.1\HashtagManager.xml
-C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\netcoreapp3.1\HashtagManager.xml

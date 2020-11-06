@@ -8,7 +8,7 @@
     <DockerServiceName>hashtagmanager</DockerServiceName>
   </PropertyGroup>
   <PropertyGroup>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/Post</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/Swagger</DockerServiceUrl>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

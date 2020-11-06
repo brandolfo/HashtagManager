@@ -55,3 +55,9 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckl
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.OpenApi.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.xml
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\AutoMapper.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Newtonsoft.Json.Bson.dll
