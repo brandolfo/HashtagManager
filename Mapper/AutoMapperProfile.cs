@@ -7,7 +7,7 @@ namespace HashtagManager.Mapper
 		{
 			public AutoMapperProfile() 
 			{
-				CreateMap<Post, PostDTO>().ReverseMap();
+				CreateMap<Posteador, PosteadorDTO>().ReverseMap();
 				CreateMap<User, UserDTO>().ReverseMap();
 			}
 		}

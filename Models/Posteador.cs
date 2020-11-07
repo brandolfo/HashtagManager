@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 namespace HashtagManager.Models
 {
-	public class Post
+	public class Posteador
 	{
 		public Guid Id { get; set; }
 		public DateTime DatePost { get; set; }

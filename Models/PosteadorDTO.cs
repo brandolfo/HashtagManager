@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace HashtagManager.Models
 {
-	public class PostDTO
+	public class PosteadorDTO
 	{
 		[JsonIgnore]
 		public Guid Id { get; set; }

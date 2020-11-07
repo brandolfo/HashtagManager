@@ -7,6 +7,6 @@ namespace HashtagManager.Models
 	{
 		public Guid Id { get; set; }
 		public string Mail { get; set; }
-		public virtual IEnumerable<PostDTO> PostList { get; set; } = new List<PostDTO>();
+		public virtual IEnumerable<PosteadorDTO> PostList { get; set; } = new List<PosteadorDTO>();
 	}
 }

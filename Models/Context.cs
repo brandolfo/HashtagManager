@@ -17,10 +17,10 @@ namespace HashtagManager.Models
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Post>().HasOne(x => x.user).WithMany(x => x.PostList);
+			modelBuilder.Entity<Posteador>().HasOne(x => x.user).WithMany(x => x.PostList);
 		}
 
-		public DbSet<Post> Posts { get; set; }
+		public DbSet<Posteador> Posts { get; set; }
 		public DbSet<User> Users { get; set; }
 	}
 }

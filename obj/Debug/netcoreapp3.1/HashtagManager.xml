@@ -4,27 +4,27 @@
         <name>HashtagManager</name>
     </assembly>
     <members>
-        <member name="M:HashtagManager.Controllers.PostController.Get">
+        <member name="M:HashtagManager.Controllers.PosteadorController.Get">
             <summary>
             Lista todos los posts existentes
             </summary>
             <returns>get a todos los post en la bd</returns>
         </member>
-        <member name="M:HashtagManager.Controllers.PostController.Get(System.String)">
+        <member name="M:HashtagManager.Controllers.PosteadorController.Get(System.String)">
             <summary>
             filtra post por palabra clave
             </summary>
             <param name="keyWord"></param>
             <returns> devuelve una lista de post con la palabra clave</returns>
         </member>
-        <member name="M:HashtagManager.Controllers.PostController.Post(HashtagManager.Models.PostDTO)">
+        <member name="M:HashtagManager.Controllers.PosteadorController.Post(HashtagManager.Models.PosteadorDTO)">
             <summary>
             Crea un post al usuario
             </summary>
             <param name="post"></param>
             <returns>agrega un post a la lista de post del usuario </returns>
         </member>
-        <member name="M:HashtagManager.Controllers.PostController.Delete(System.Guid)">
+        <member name="M:HashtagManager.Controllers.PosteadorController.Delete(System.Guid)">
             <summary>
             elimina un post por id
             </summary>
