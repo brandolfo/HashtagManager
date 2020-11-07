@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using HashtagManager.Domain.DTO.Model;
+using HashtagManager.Domain.Entities.Model;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
