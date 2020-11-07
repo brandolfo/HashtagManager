@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using HashtagManager.Domain.Dto;
+using HashtagManager.Domain.Entity;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +45,13 @@ namespace HashtagManager.Controllers
 			_context.Users.Add(user);
 			_context.SaveChanges();
 			return new CreatedResult(user.Id.ToString(), user);
+		}
+		// POST api/<UserController>
+		[HttpPost]
+		public IActionResult SetPassword(Guid user, string password)
+		{
+			//acá seteas una password
+			return Ok();
 		}
 
 		// PUT api/<UserController>/5

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using HashtagManager.Application.Services.Interface;
+using HashtagManager.Domain.Entity;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,10 +16,13 @@ namespace HashtagManager.Controllers
 	public class PostController : ControllerBase
 	{
 		private readonly Context _context;
-		public PostController(Context context) 
+        private readonly IBaseService<Post> postRepository;
+
+        public PostController(Context context, IBaseService<Post> postRepository) 
 		{
 			_context = context;
-		}
+            this.postRepository = postRepository;
+        }
 
 		// GET: api/<PostController>
 		[HttpGet]
@@ -42,8 +47,7 @@ namespace HashtagManager.Controllers
 		[HttpPost]
 		public IActionResult Post(Post post)
 		{
-			_context.Posts.Add(post);
-			_context.SaveChanges();
+			postRepository.Add(post);
 
 			return new CreatedResult(post.Id.ToString(), post);
 		}

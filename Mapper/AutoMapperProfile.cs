@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using HashtagManager.Domain.Dto;
+using HashtagManager.Domain.Entity;
 using HashtagManager.Models;
 
 namespace HashtagManager.Mapper

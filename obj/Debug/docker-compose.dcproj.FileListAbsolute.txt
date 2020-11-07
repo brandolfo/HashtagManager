@@ -61,7 +61,6 @@ D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\appsettings.json
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.StaticWebAssets.xml
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.exe
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.dll
-D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.AspNetCore.Identity.UI.dll
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -89,4 +88,13 @@ D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.xml
 D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\Programming\Projects\Brandom\HashtagManager\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.AspNetCore.Identity.UI.dll
 D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\AutoMapper.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.Domain.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.Application.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.Domain.pdb
+D:\Programming\Projects\Brandom\HashtagManager\bin\Debug\HashtagManager.Application.pdb
