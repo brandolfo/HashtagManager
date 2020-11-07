@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}hashtagmanager
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: HashtagManager/Dockerfile

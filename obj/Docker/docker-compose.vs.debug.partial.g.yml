@@ -14,7 +14,7 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager:/app
+      - C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\HashtagManager:/app
       - C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager:/src
       - C:\Users\Brandom\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Brandom\.nuget\packages\:/root/.nuget/packages:ro

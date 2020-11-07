@@ -3,12 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>a113681b-e75d-42dd-8e09-a403059f4b62</ProjectGuid>
+    <ProjectGuid>d3c86e16-d9d6-4f06-9afb-c9c12f397232</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>hashtagmanager</DockerServiceName>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/Swagger</DockerServiceUrl>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
