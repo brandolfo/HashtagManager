@@ -61,3 +61,4 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\AutoMapper
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\System.Text.Json.dll

@@ -50,9 +50,10 @@ namespace HashtagManager.Controllers
 		[HttpPost]
 		public IActionResult Post(User user)
 		{
-			_context.Users.Add(user);
+			var MappedUser = _mapper.Map<User>(user);
+			_context.Users.Add(MappedUser);
 			_context.SaveChanges();
-			return new CreatedResult(user.Id.ToString(), user);
+			return new CreatedResult(MappedUser.Id.ToString(), user);
 		}
 
 		// PUT api/<UserController>/5
@@ -65,7 +66,7 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public void Delete(Guid id)
 		{
-			var ToDelete = _context.Users.Find(id); // hay que agregar mapping en un delete?? consultar a corvo-san
+			var ToDelete = _context.Users.Find(id);
 
 			_context.Users.Remove(ToDelete);
 			_context.SaveChanges();

@@ -58,12 +58,13 @@ namespace HashtagManager.Controllers
 		/// <param name="post"></param>
 		/// <returns>agrega un post a la lista de post del usuario </returns>
 		[HttpPost]
-		public IActionResult Post(Post post) // hay que utilizar mapping en el post?
+		public IActionResult Post(PostDTO post)
 		{
-			_context.Posts.Add(post);
+			var MappedPost = _mapper.Map<Post>(post);
+			_context.Posts.Add(MappedPost);
 			_context.SaveChanges();
 
-			return new CreatedResult(post.Id.ToString(), post);
+			return new CreatedResult(MappedPost.Id.ToString(), MappedPost);
 		}
 
 		// PUT api/<PostController>/5
@@ -80,7 +81,7 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public void Delete(Guid id)
 		{
-			var ToDelete = _context.Posts.Find(id); // hay que agregar mapping en un delete?? consultar a corvo-san
+			var ToDelete = _context.Posts.Find(id);
 			_context.Posts.Remove(ToDelete);
 			_context.SaveChanges();			
 		}

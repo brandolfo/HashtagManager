@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace HashtagManager.Models
 {
 	public class PostDTO
 	{
+		[JsonIgnore]
 		public Guid Id { get; set; }
+		[JsonIgnore]
 		public DateTime DatePost { get; set; }
 		public string TextPost { get; set; }
 		public Guid UserId { get; set; } //foreing key
+		[JsonIgnore]
 		public virtual UserDTO User { get; set; } //prop de navegacion
 
 	}
