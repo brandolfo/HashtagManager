@@ -1,0 +1,5 @@
+D:\Programming\Projects\Brandom\HashtagManager\HashtagManager.Domain\bin\Debug\netstandard2.0\HashtagManager.Domain.deps.json
+D:\Programming\Projects\Brandom\HashtagManager\HashtagManager.Domain\bin\Debug\netstandard2.0\HashtagManager.Domain.dll
+D:\Programming\Projects\Brandom\HashtagManager\HashtagManager.Domain\obj\Debug\netstandard2.0\HashtagManager.Domain.csprojAssemblyReference.cache
+D:\Programming\Projects\Brandom\HashtagManager\HashtagManager.Domain\obj\Debug\netstandard2.0\HashtagManager.Domain.AssemblyInfoInputs.cache
+D:\Programming\Projects\Brandom\HashtagManager\HashtagManager.Domain\obj\Debug\netstandard2.0\HashtagManager.Domain.AssemblyInfo.cs

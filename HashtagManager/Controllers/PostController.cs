@@ -4,6 +4,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using AutoMapper;
+using HashtagManager.Application.Service.Interface;
+using HashtagManager.Domain.Dto.Model;
+using HashtagManager.Domain.Entities.Model;
 using HashtagManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,21 +21,23 @@ namespace HashtagManager.Controllers
 	{
 		private readonly Context _context;
 		private readonly IMapper _mapper;
-		public PostController(Context context, IMapper mapper) 
+        private readonly IBaseService<Post> postService;
+
+        public PostController(Context context, IMapper mapper, IBaseService<Post> postService) 
 		{
 			_context = context;
 			_mapper = mapper;
-
-		}
+            this.postService = postService;
+        }
 		// GET: api/<PostController>
 		/// <summary>
 		/// Lista todos los posts existentes
 		/// </summary>
 		/// <returns>get a todos los post en la bd</returns>
 		[HttpGet]
-		public IEnumerable<PostDTO> Get()
+		public IEnumerable<PostDto> Get()
 		{
-			return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts
+			return _mapper.Map<IEnumerable<PostDto>>(_context.Posts
 				.OrderByDescending(x => x.DatePost));
 			//return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts.Include(x => x.user).OrderByDescending(x => x.DatePost));
 		}
@@ -46,7 +51,7 @@ namespace HashtagManager.Controllers
 		[HttpGet("{keyWord}")] // cambie "{id}" por "{KeyWord}"
 		public IActionResult Get(string keyWord)
 		{
-			var PostsWithKeyWord = _mapper.Map<IEnumerable<PostDTO>>(
+			var PostsWithKeyWord = _mapper.Map<IEnumerable<PostDto>>(
 				_context.Posts.Where(x => x.TextPost.Contains(keyWord)));
 			return new OkObjectResult(PostsWithKeyWord);
 		}
@@ -60,8 +65,8 @@ namespace HashtagManager.Controllers
 		[HttpPost]
 		public IActionResult Post(Post post) // hay que utilizar mapping en el post?
 		{
-			_context.Posts.Add(post);
-			_context.SaveChanges();
+			postService.Add(post);
+			postService.Save();
 
 			return new CreatedResult(post.Id.ToString(), post);
 		}
