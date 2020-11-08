@@ -3,8 +3,6 @@ using HashtagManager.Domain.Entities.Model;
 using HashtagManager.Domain.Context;
 using System;
 using System.Linq;
-using System.Collections;
-using System.Linq.Expressions;
 using System.Collections.Generic;
 
 namespace HashtagManager.Application.Service
@@ -26,17 +24,18 @@ namespace HashtagManager.Application.Service
 
 		public void Delete(Guid entity)
 		{
-			throw new NotImplementedException();
+			var toDelete = _context.Posts.Find(entity);
+			_context.Posts.Remove(toDelete);
 		}
 
 		public IQueryable<Posteador> GetAll()
 		{
-			throw new NotImplementedException(); 
+			var allList = _context.Posts.OrderByDescending(x => x.DatePost);
+			return allList;
 		}
-
-		public IEnumerable<Posteador> GetQuery(Expression<Func<bool, Posteador>> expression)
+		public IEnumerable<Posteador> GetQuery(Func<Posteador, bool> expression)
 		{
-			throw new NotImplementedException();
+			return _context.Posts.Where(expression);
 		}
 
 		public void Save()

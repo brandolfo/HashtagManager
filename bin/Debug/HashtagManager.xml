@@ -17,7 +17,7 @@
             <param name="keyWord"></param>
             <returns> devuelve una lista de post con la palabra clave</returns>
         </member>
-        <member name="M:HashtagManager.Controllers.PosteadorController.Post(HashtagManager.Models.PosteadorDTO)">
+        <member name="M:HashtagManager.Controllers.PosteadorController.Post(HashtagManager.Domain.DTO.Model.PosteadorDTO)">
             <summary>
             Crea un post al usuario
             </summary>

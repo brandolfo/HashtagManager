@@ -10,7 +10,7 @@ namespace HashtagManager.Domain.Repository
 	{
 		T Add(T entity);
 		IQueryable<T> GetAll();
-		IEnumerable<T> GetQuery(Expression<Func<bool, T>> expression);
+		IEnumerable<T> GetQuery(Func<T, bool> expression);
 		void Delete(Guid entity);
 		T Update(T entity);
 		void Save();

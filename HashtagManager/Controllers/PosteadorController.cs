@@ -4,7 +4,7 @@ using System.Linq;
 using AutoMapper;
 using HashtagManager.Domain.DTO.Model;
 using HashtagManager.Domain.Entities.Model;
-using HashtagManager.Models;
+using HashtagManager.Domain.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,12 +15,13 @@ namespace HashtagManager.Controllers
 	[ApiController]
 	public class PosteadorController : ControllerBase
 	{
-		private readonly Context _context;
 		private readonly IMapper _mapper;
-		public PosteadorController(Context context, IMapper mapper) 
+		private readonly IBaseRepository<Posteador> _posteadorRepository;
+		public PosteadorController(IMapper mapper, IBaseRepository<Posteador> posteadorRepository) 
 		{
-			_context = context;
 			_mapper = mapper;
+			_posteadorRepository = posteadorRepository;
+
 
 		}
 		// GET: api/<PostController>
@@ -29,11 +30,9 @@ namespace HashtagManager.Controllers
 		/// </summary>
 		/// <returns>get a todos los post en la bd</returns>
 		[HttpGet]
-		public IEnumerable<PosteadorDTO> Get()
+		public IActionResult Get()
 		{
-			return _mapper.Map<IEnumerable<PosteadorDTO>>(_context.Posts
-				.OrderByDescending(x => x.DatePost));
-			//return _mapper.Map<IEnumerable<PostDTO>>(_context.Posts.Include(x => x.user).OrderByDescending(x => x.DatePost));
+			return new OkObjectResult(_mapper.Map<IQueryable<PosteadorDTO>>(_posteadorRepository.GetAll()));
 		}
 
 		// GET api/<PostController>/5
@@ -45,9 +44,8 @@ namespace HashtagManager.Controllers
 		[HttpGet("{keyWord}")] // cambie "{id}" por "{KeyWord}"
 		public IActionResult Get(string keyWord)
 		{
-			var PostsWithKeyWord = _mapper.Map<IEnumerable<PosteadorDTO>>(
-				_context.Posts.Where(x => x.TextPost.Contains(keyWord)));
-			return new OkObjectResult(PostsWithKeyWord);
+			return new OkObjectResult(_mapper.Map<IEnumerable<PosteadorDTO>>
+				(_posteadorRepository.GetQuery(x => x.TextPost.Contains(keyWord))));
 		}
 
 		// POST api/<PostController>
@@ -60,9 +58,7 @@ namespace HashtagManager.Controllers
 		public IActionResult Post(PosteadorDTO post)
 		{
 			var MappedPost = _mapper.Map<Posteador>(post);
-			_context.Posts.Add(MappedPost);
-			_context.SaveChanges();
-
+			_posteadorRepository.Add(MappedPost);
 			return new CreatedResult(MappedPost.Id.ToString(), MappedPost);
 		}
 
@@ -80,9 +76,7 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public void Delete(Guid id)
 		{
-			var ToDelete = _context.Posts.Find(id);
-			_context.Posts.Remove(ToDelete);
-			_context.SaveChanges();			
+			_posteadorRepository.Delete(id);			
 		}
 	}
 }

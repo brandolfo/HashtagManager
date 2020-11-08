@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
-using HashtagManager.Models;
+using HashtagManager.Domain.DTO.Model;
+using HashtagManager.Domain.Entities.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +15,9 @@ namespace HashtagManager.Controllers
 	[ApiController]
 	public class UserController : ControllerBase
 	{
-		private readonly Context _context;
 		private readonly IMapper _mapper;
-		public UserController(Context context, IMapper mapper)
+		public UserController(IMapper mapper)
 		{
-			_context = context;
 			_mapper = mapper;
 		}
 		// GET: api/<UserController>
@@ -30,7 +28,8 @@ namespace HashtagManager.Controllers
 		[HttpGet]
 		public IEnumerable<UserDTO> Get()
 		{
-			return _mapper.Map<IEnumerable<UserDTO>>(_context.Users.Include(x => x.PostList));
+			//return _mapper.Map<IEnumerable<UserDTO>>(_context.Users.Include(x => x.PostList));
+			throw new NotImplementedException(); 
 		}
 
 		// GET api/<UserController>/5
@@ -42,8 +41,9 @@ namespace HashtagManager.Controllers
 		[HttpGet("{id}")]
 		public IActionResult Get(Guid id)
 		{
-			var user = _mapper.Map<UserDTO>(_context.Users.Find(id));
-			return new OkObjectResult(user);
+			//var user = _mapper.Map<UserDTO>(_context.Users.Find(id));
+			//return new OkObjectResult(user);
+			throw new NotImplementedException();
 		}
 
 		// POST api/<UserController>
@@ -51,11 +51,11 @@ namespace HashtagManager.Controllers
 		public IActionResult Post(User user)
 		{
 			var MappedUser = _mapper.Map<User>(user);
-			_context.Users.Add(MappedUser);
-			_context.SaveChanges();
+			//_context.Users.Add(MappedUser);
+			//_context.SaveChanges();
 			return new CreatedResult(MappedUser.Id.ToString(), user);
 		}
-
+		
 		// PUT api/<UserController>/5
 		[HttpPut("{id}")]
 		public void Put(int id, [FromBody] string value)
@@ -66,10 +66,10 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public void Delete(Guid id)
 		{
-			var ToDelete = _context.Users.Find(id);
+			//var ToDelete = _context.Users.Find(id);
 
-			_context.Users.Remove(ToDelete);
-			_context.SaveChanges();
+			//_context.Users.Remove(ToDelete);
+			//_context.SaveChanges();
 		}
 	}
 }

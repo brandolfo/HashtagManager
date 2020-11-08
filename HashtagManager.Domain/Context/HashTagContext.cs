@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace HashtagManager.Models
+namespace HashtagManager.Domain.Context
 {
-	public class Context : DbContext
+	public class HashTagContext : DbContext
 	{
 		private readonly IConfiguration _config;
-		public Context(IConfiguration config)
+		public HashTagContext(IConfiguration config)
 		{
 			_config = config;
 		}
@@ -15,7 +15,6 @@ namespace HashtagManager.Models
 		{
 			optionsBuilder.UseSqlServer(_config.GetConnectionString("Hashdb"));
 		}
-
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Posteador>().HasOne(x => x.user).WithMany(x => x.PostList);
