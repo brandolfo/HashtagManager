@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace HashtagManager.Application.Service
 {
-	class PosteadorService : IBaseService<Posteador>
+	public class PosteadorService : IBaseService<Posteador>
 	{
 		private readonly IHashTagContext _context;
 
@@ -15,23 +15,20 @@ namespace HashtagManager.Application.Service
 		{
 			_context = context;
 		}
-
 		public Posteador Add(Posteador entity)
 		{
 			_context.Posts.Add(entity);
 			return entity;
 		}
-
 		public void Delete(Guid entity)
 		{
 			var toDelete = _context.Posts.Find(entity);
-			_context.Posts.Remove(toDelete);
+			if (toDelete != null) _context.Posts.Remove(toDelete);
 		}
 
 		public IQueryable<Posteador> GetAll()
 		{
-			var allList = _context.Posts.OrderByDescending(x => x.DatePost);
-			return allList;
+			return _context.Posts.OrderByDescending(x => x.DatePost);
 		}
 		public IEnumerable<Posteador> GetQuery(Func<Posteador, bool> expression)
 		{
@@ -40,7 +37,7 @@ namespace HashtagManager.Application.Service
 
 		public void Save()
 		{
-			throw new NotImplementedException();
+			_context.SaveChanges();
 		}
 
 		public Posteador Update(Posteador entity)
@@ -48,6 +45,10 @@ namespace HashtagManager.Application.Service
 			throw new NotImplementedException();
 		}
 
+		public Posteador GetOne(Guid entity)
+		{
+			throw new NotImplementedException();
+		}
 	}
 
 }

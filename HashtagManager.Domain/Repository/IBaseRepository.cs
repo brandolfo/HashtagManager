@@ -14,5 +14,6 @@ namespace HashtagManager.Domain.Repository
 		void Delete(Guid entity);
 		T Update(T entity);
 		void Save();
+		T GetOne(Guid entity);
 	}
 }

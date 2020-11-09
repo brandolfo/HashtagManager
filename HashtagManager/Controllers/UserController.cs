@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using HashtagManager.Application.Service.Interface;
 using HashtagManager.Domain.DTO.Model;
 using HashtagManager.Domain.Entities.Model;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,9 +15,11 @@ namespace HashtagManager.Controllers
 	public class UserController : ControllerBase
 	{
 		private readonly IMapper _mapper;
-		public UserController(IMapper mapper)
+		private readonly IBaseService<User> _userRepository;
+		public UserController(IMapper mapper, IBaseService<User> userRepository)
 		{
 			_mapper = mapper;
+			_userRepository = userRepository;
 		}
 		// GET: api/<UserController>
 		/// <summary>
@@ -26,10 +27,9 @@ namespace HashtagManager.Controllers
 		/// </summary>
 		/// <returns>Lista de todos los usuarios en la db</returns>
 		[HttpGet]
-		public IEnumerable<UserDTO> Get()
+		public IActionResult Get()
 		{
-			//return _mapper.Map<IEnumerable<UserDTO>>(_context.Users.Include(x => x.PostList));
-			throw new NotImplementedException(); 
+			return new OkObjectResult(_mapper.Map<IEnumerable<UserDTO>>(_userRepository.GetAll()));
 		}
 
 		// GET api/<UserController>/5
@@ -41,18 +41,22 @@ namespace HashtagManager.Controllers
 		[HttpGet("{id}")]
 		public IActionResult Get(Guid id)
 		{
-			//var user = _mapper.Map<UserDTO>(_context.Users.Find(id));
-			//return new OkObjectResult(user);
-			throw new NotImplementedException();
+			var filtereduser = _mapper.Map<UserDTO>(_userRepository.GetOne(id));
+			if (filtereduser == null) return NotFound();
+			return new OkObjectResult(filtereduser);
 		}
 
 		// POST api/<UserController>
+		/// <summary>
+		/// Crea un nuevo usuario
+		/// </summary>
+		/// <param name="user"></param>
+		/// <returns>genera un nuevo usuario en la bd</returns>
 		[HttpPost]
 		public IActionResult Post(User user)
 		{
-			var MappedUser = _mapper.Map<User>(user);
-			//_context.Users.Add(MappedUser);
-			//_context.SaveChanges();
+			var MappedUser = _mapper.Map<User>(_userRepository.Add(user));
+			_userRepository.Save();
 			return new CreatedResult(MappedUser.Id.ToString(), user);
 		}
 		
@@ -62,14 +66,18 @@ namespace HashtagManager.Controllers
 		{
 		}
 
+		/// <summary>
+		/// elimina un usuario
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns>elimina un usuario de la bd</returns>
 		// DELETE api/<UserController>/5
 		[HttpDelete("{id}")]
-		public void Delete(Guid id)
+		public IActionResult Delete(Guid id)
 		{
-			//var ToDelete = _context.Users.Find(id);
-
-			//_context.Users.Remove(ToDelete);
-			//_context.SaveChanges();
+			_userRepository.Delete(id);
+			_userRepository.Save();
+			return new OkResult();
 		}
 	}
 }

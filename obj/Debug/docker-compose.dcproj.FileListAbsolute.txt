@@ -38,3 +38,5 @@ C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\docker-com
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\obj\Debug\docker-compose.dcproj.CopyComplete
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.Domain.dll
 C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.Domain.pdb
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.Application.dll
+C:\Users\Brandom\Desktop\Trabajos CSharp\Git\HashtagManager\bin\Debug\HashtagManager.Application.pdb

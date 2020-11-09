@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using HashtagManager.Application.Service.Interface;
 using HashtagManager.Domain.DTO.Model;
 using HashtagManager.Domain.Entities.Model;
-using HashtagManager.Domain.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,13 +16,11 @@ namespace HashtagManager.Controllers
 	public class PosteadorController : ControllerBase
 	{
 		private readonly IMapper _mapper;
-		private readonly IBaseRepository<Posteador> _posteadorRepository;
-		public PosteadorController(IMapper mapper, IBaseRepository<Posteador> posteadorRepository) 
+		private readonly IBaseService<Posteador> _posteadorRepository;
+		public PosteadorController(IMapper mapper, IBaseService<Posteador> posteadorRepository)
 		{
 			_mapper = mapper;
 			_posteadorRepository = posteadorRepository;
-
-
 		}
 		// GET: api/<PostController>
 		/// <summary>
@@ -32,7 +30,7 @@ namespace HashtagManager.Controllers
 		[HttpGet]
 		public IActionResult Get()
 		{
-			return new OkObjectResult(_mapper.Map<IQueryable<PosteadorDTO>>(_posteadorRepository.GetAll()));
+			return new OkObjectResult(_mapper.Map<IEnumerable<PosteadorDTO>>(_posteadorRepository.GetAll()));
 		}
 
 		// GET api/<PostController>/5
@@ -59,6 +57,7 @@ namespace HashtagManager.Controllers
 		{
 			var MappedPost = _mapper.Map<Posteador>(post);
 			_posteadorRepository.Add(MappedPost);
+			_posteadorRepository.Save();
 			return new CreatedResult(MappedPost.Id.ToString(), MappedPost);
 		}
 
@@ -74,9 +73,11 @@ namespace HashtagManager.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		[HttpDelete("{id}")]
-		public void Delete(Guid id)
+		public IActionResult Delete(Guid id)
 		{
-			_posteadorRepository.Delete(id);			
+			_posteadorRepository.Delete(id);
+			_posteadorRepository.Save();
+			return new OkResult();
 		}
 	}
 }

@@ -2,7 +2,10 @@ using System;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
+using HashtagManager.Application.Service;
+using HashtagManager.Application.Service.Interface;
 using HashtagManager.Domain.Context;
+using HashtagManager.Domain.Entities.Model;
 using HashtagManager.Mapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +30,9 @@ namespace HashtagManager
 		{
 			services.AddControllers();
 			services.AddDbContext<HashTagContext>();
+			services.AddTransient<IHashTagContext, HashTagContext>();
+			services.AddTransient<IBaseService<Posteador>, PosteadorService>();
+			services.AddTransient<IBaseService<User>, UserService>();
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });

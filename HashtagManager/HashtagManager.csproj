@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HashtagManager.Application\HashtagManager.Application.csproj" />
     <ProjectReference Include="..\HashtagManager.Domain\HashtagManager.Domain.csproj" />
   </ItemGroup>
 

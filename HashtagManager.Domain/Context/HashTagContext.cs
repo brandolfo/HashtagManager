@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace HashtagManager.Domain.Context
 {
-	public class HashTagContext : DbContext
+	public class HashTagContext : DbContext, IHashTagContext
 	{
 		private readonly IConfiguration _config;
 		public HashTagContext(IConfiguration config)
@@ -19,7 +19,6 @@ namespace HashtagManager.Domain.Context
 		{
 			modelBuilder.Entity<Posteador>().HasOne(x => x.user).WithMany(x => x.PostList);
 		}
-
 		public DbSet<Posteador> Posts { get; set; }
 		public DbSet<User> Users { get; set; }
 	}

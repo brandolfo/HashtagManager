@@ -43,5 +43,19 @@
             <param name="id"></param>
             <returns>Nos filtra un usuario por id o retorna null de no haber uno con dicho id</returns>
         </member>
+        <member name="M:HashtagManager.Controllers.UserController.Post(HashtagManager.Domain.Entities.Model.User)">
+            <summary>
+            Crea un nuevo usuario
+            </summary>
+            <param name="user"></param>
+            <returns>genera un nuevo usuario en la bd</returns>
+        </member>
+        <member name="M:HashtagManager.Controllers.UserController.Delete(System.Guid)">
+            <summary>
+            elimina un usuario
+            </summary>
+            <param name="id"></param>
+            <returns>elimina un usuario de la bd</returns>
+        </member>
     </members>
 </doc>
