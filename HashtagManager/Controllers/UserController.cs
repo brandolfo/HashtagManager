@@ -29,7 +29,8 @@ namespace HashtagManager.Controllers
 		[HttpGet]
 		public IActionResult Get()
 		{
-			return new OkObjectResult(_mapper.Map<IEnumerable<UserDTO>>(_userRepository.GetAll()));
+			var prueba = _mapper.Map<IEnumerable<UserDTO>>(_userRepository.GetAll());
+			return new OkObjectResult(prueba);
 		}
 
 		// GET api/<UserController>/5
@@ -45,7 +46,7 @@ namespace HashtagManager.Controllers
 			if (filtereduser == null) return NotFound();
 			return new OkObjectResult(filtereduser);
 		}
-
+		
 		// POST api/<UserController>
 		/// <summary>
 		/// Crea un nuevo usuario
@@ -62,8 +63,10 @@ namespace HashtagManager.Controllers
 		
 		// PUT api/<UserController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public void Put(Guid id, [FromBody] string value)
 		{
+			_userRepository.Update(id, value);
+			_userRepository.Save();
 		}
 
 		/// <summary>
@@ -75,6 +78,7 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public IActionResult Delete(Guid id)
 		{
+			if (_userRepository.GetOne(id) == null) return NotFound();
 			_userRepository.Delete(id);
 			_userRepository.Save();
 			return new OkResult();

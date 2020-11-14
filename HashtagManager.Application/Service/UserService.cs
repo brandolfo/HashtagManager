@@ -1,10 +1,11 @@
 ﻿using HashtagManager.Application.Service.Interface;
 using HashtagManager.Domain.Context;
 using HashtagManager.Domain.Entities.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Security.Cryptography.X509Certificates;
 
 namespace HashtagManager.Application.Service
 {
@@ -29,12 +30,19 @@ namespace HashtagManager.Application.Service
 
 		public IQueryable<User> GetAll()
 		{
-			return _context.Users;
+			var usuarios = _context.Users;
+			return usuarios;
 		}
 		public User GetOne(Guid entity)
 		{
-			return _context.Users.Find(entity);
+			return _context.Users.Include(x => x.PostList).FirstOrDefault(x => x.Id == entity);
 		}
+
+		public IEnumerable<User> GetPosts(Guid entity)
+		{
+			throw new NotImplementedException();
+		}
+
 		public IEnumerable<User> GetQuery(Func<User, bool> expression)
 		{
 			return _context.Users.Where(expression);
@@ -46,9 +54,13 @@ namespace HashtagManager.Application.Service
 			_context.SaveChanges();
 		}
 
-		public User Update(User entity)
+		public User Update(Guid entity, string body)
 		{
-			throw new NotImplementedException();
+			var userUpdate = _context.Users.Find(entity);
+			userUpdate.Password = body;
+			return userUpdate;
 		}
+
+
 	}
 }

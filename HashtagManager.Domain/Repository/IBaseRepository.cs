@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 
 namespace HashtagManager.Domain.Repository
 {
@@ -12,8 +10,9 @@ namespace HashtagManager.Domain.Repository
 		IQueryable<T> GetAll();
 		IEnumerable<T> GetQuery(Func<T, bool> expression);
 		void Delete(Guid entity);
-		T Update(T entity);
+		T Update(Guid entity, string body);
 		void Save();
 		T GetOne(Guid entity);
+		IEnumerable<T> GetPosts(Guid id);
 	}
 }

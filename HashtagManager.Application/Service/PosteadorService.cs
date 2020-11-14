@@ -40,14 +40,22 @@ namespace HashtagManager.Application.Service
 			_context.SaveChanges();
 		}
 
-		public Posteador Update(Posteador entity)
+		public Posteador Update(Guid entity, string body)
 		{
-			throw new NotImplementedException();
+			var postUpdate = _context.Posts.Find(entity);
+			postUpdate.TextPost = body;
+			return postUpdate;
 		}
 
 		public Posteador GetOne(Guid entity)
 		{
+			return _context.Posts.Find(entity);
+		}
+
+		public IEnumerable<Posteador> GetPosts(Guid entity)
+		{
 			throw new NotImplementedException();
+			
 		}
 	}
 

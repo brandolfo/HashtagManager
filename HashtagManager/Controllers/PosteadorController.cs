@@ -22,7 +22,7 @@ namespace HashtagManager.Controllers
 			_mapper = mapper;
 			_posteadorRepository = posteadorRepository;
 		}
-		// GET: api/<PostController>
+		// GET api/<PosteadorController>/5
 		/// <summary>
 		/// Lista todos los posts existentes
 		/// </summary>
@@ -33,7 +33,7 @@ namespace HashtagManager.Controllers
 			return new OkObjectResult(_mapper.Map<IEnumerable<PosteadorDTO>>(_posteadorRepository.GetAll()));
 		}
 
-		// GET api/<PostController>/5
+		// GET api/<PosteadorController>/5
 		/// <summary>
 		/// filtra post por palabra clave
 		/// </summary>
@@ -46,7 +46,7 @@ namespace HashtagManager.Controllers
 				(_posteadorRepository.GetQuery(x => x.TextPost.Contains(keyWord))));
 		}
 
-		// POST api/<PostController>
+		// POST api/<PosteadorController>/5
 		/// <summary>
 		/// Crea un post al usuario
 		/// </summary>
@@ -63,8 +63,11 @@ namespace HashtagManager.Controllers
 
 		// PUT api/<PostController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public IActionResult Put(Guid id, string value)
 		{
+			_posteadorRepository.Update(id, value);
+			_posteadorRepository.Save();
+			return new OkResult();
 		}
 
 		// DELETE api/<PostController>/5
@@ -75,6 +78,7 @@ namespace HashtagManager.Controllers
 		[HttpDelete("{id}")]
 		public IActionResult Delete(Guid id)
 		{
+			if (_posteadorRepository.GetOne(id) == null) return NotFound();
 			_posteadorRepository.Delete(id);
 			_posteadorRepository.Save();
 			return new OkResult();
